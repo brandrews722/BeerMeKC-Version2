@@ -49,6 +49,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+      .state('app.browseAll', {
+      url: '/browseAll',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/browseAll.html'
+        }
+      }
+    })
 
   .state('app.single', {
     url: '/playlists/:playlistId',
