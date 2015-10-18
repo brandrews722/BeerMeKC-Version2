@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="02e2ff8f-cbfe-45dd-96e7-77bc161c5cc4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/bmkc_client/controllers/auth.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/brewery_db/controllers/brewery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/brewery_db/models/brewery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/bmkc_client/controllers/client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/bmkc_client/models/client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/bmkc_client/models/code.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/views/dialog.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/ionic.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/bmkc_client/controllers/oauth2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/server.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/bmkc_client/models/token.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/bmkc_client/controllers/user.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/APIServer/bmkc_client/models/user.js" />
+      <change type="DELETED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\ionic.scss" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\.bowerrc" afterPath="$PROJECT_DIR$/BMKCApp/.bowerrc" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\.editorconfig" afterPath="$PROJECT_DIR$/BMKCApp/.editorconfig" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\.gitignore" afterPath="$PROJECT_DIR$/BMKCApp/.gitignore" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\bower.json" afterPath="$PROJECT_DIR$/BMKCApp/bower.json" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\config.xml" afterPath="$PROJECT_DIR$/BMKCApp/config.xml" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\gulpfile.js" afterPath="$PROJECT_DIR$/BMKCApp/gulpfile.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\hooks\README.md" afterPath="$PROJECT_DIR$/BMKCApp/hooks/README.md" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\hooks\after_prepare\010_add_platform_class.js" afterPath="$PROJECT_DIR$/BMKCApp/hooks/after_prepare/010_add_platform_class.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\ionic.project" afterPath="$PROJECT_DIR$/BMKCApp/ionic.project" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\package.json" afterPath="$PROJECT_DIR$/BMKCApp/package.json" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\icon\drawable-hdpi-icon.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/icon/drawable-hdpi-icon.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\icon\drawable-ldpi-icon.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/icon/drawable-ldpi-icon.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\icon\drawable-mdpi-icon.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/icon/drawable-mdpi-icon.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\icon\drawable-xhdpi-icon.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/icon/drawable-xhdpi-icon.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\icon\drawable-xxhdpi-icon.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/icon/drawable-xxhdpi-icon.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\icon\drawable-xxxhdpi-icon.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/icon/drawable-xxxhdpi-icon.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-land-hdpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-land-hdpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-land-ldpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-land-ldpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-land-mdpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-land-mdpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-land-xhdpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-land-xhdpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-land-xxhdpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-land-xxhdpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-land-xxxhdpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-land-xxxhdpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-port-hdpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-port-hdpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-port-ldpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-port-ldpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-port-mdpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-port-mdpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-port-xhdpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-port-xhdpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-port-xxhdpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-port-xxhdpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\android\splash\drawable-port-xxxhdpi-screen.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\icon.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/icon.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-40.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-40.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-40@2x.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-40@2x.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-50.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-50.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-50@2x.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-50@2x.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-60.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-60.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-60@2x.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-60@2x.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-60@3x.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-60@3x.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-72.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-72.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-72@2x.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-72@2x.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-76.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-76.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-76@2x.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-76@2x.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-small.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-small.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-small@2x.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-small@2x.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon-small@3x.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon-small@3x.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\icon\icon@2x.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/icon/icon@2x.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\splash\Default-568h@2x~iphone.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/splash/Default-568h@2x~iphone.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\splash\Default-667h.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/splash/Default-667h.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\splash\Default-736h.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/splash/Default-736h.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\splash\Default-Landscape-736h.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/splash/Default-Landscape-736h.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\splash\Default-Landscape@2x~ipad.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/splash/Default-Landscape@2x~ipad.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\splash\Default-Landscape~ipad.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/splash/Default-Landscape~ipad.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\splash\Default-Portrait@2x~ipad.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/splash/Default-Portrait@2x~ipad.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\splash\Default-Portrait~ipad.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/splash/Default-Portrait~ipad.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\splash\Default@2x~iphone.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/splash/Default@2x~iphone.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\ios\splash\Default~iphone.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/ios/splash/Default~iphone.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\resources\splash.png" afterPath="$PROJECT_DIR$/BMKCApp/resources/splash.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\scss\ionic.app.scss" afterPath="$PROJECT_DIR$/BMKCApp/scss/ionic.app.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\css\style.css" afterPath="$PROJECT_DIR$/BMKCApp/www/css/style.css" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\img\ionic.png" afterPath="$PROJECT_DIR$/BMKCApp/www/img/ionic.png" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\index.html" afterPath="$PROJECT_DIR$/BMKCApp/www/index.html" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\js\app.js" afterPath="$PROJECT_DIR$/BMKCApp/www/js/app.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\js\controllers.js" afterPath="$PROJECT_DIR$/BMKCApp/www/js/controllers.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\css\ionic.css" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/css/ionic.css" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\css\ionic.min.css" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/css/ionic.min.css" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\fonts\ionicons.eot" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/fonts/ionicons.eot" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\fonts\ionicons.svg" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/fonts/ionicons.svg" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\fonts\ionicons.ttf" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/fonts/ionicons.ttf" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\fonts\ionicons.woff" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/fonts/ionicons.woff" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\angular-ui\angular-ui-router.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/angular-ui/angular-ui-router.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\angular-ui\angular-ui-router.min.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/angular-ui/angular-ui-router.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\angular\angular-animate.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/angular/angular-animate.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\angular\angular-animate.min.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/angular/angular-animate.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\angular\angular-resource.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/angular/angular-resource.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\angular\angular-resource.min.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/angular/angular-resource.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\angular\angular-sanitize.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/angular/angular-sanitize.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\angular\angular-sanitize.min.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/angular/angular-sanitize.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\angular\angular.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/angular/angular.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\angular\angular.min.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/angular/angular.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\ionic-angular.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/ionic-angular.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\ionic-angular.min.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/ionic-angular.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\ionic.bundle.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/ionic.bundle.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\ionic.bundle.min.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/ionic.bundle.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\ionic.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/ionic.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\js\ionic.min.js" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/js/ionic.min.js" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_action-sheet.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_action-sheet.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_animations.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_animations.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_backdrop.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_backdrop.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_badge.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_badge.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_bar.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_bar.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_button-bar.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_button-bar.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_button.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_button.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_checkbox.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_checkbox.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_form.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_form.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_grid.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_grid.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_items.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_items.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_list.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_list.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_loading.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_loading.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_menu.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_menu.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_mixins.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_mixins.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_modal.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_modal.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_platform.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_platform.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_popover.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_popover.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_popup.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_popup.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_progress.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_progress.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_radio.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_radio.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_range.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_range.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_refresher.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_refresher.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_reset.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_reset.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_scaffolding.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_scaffolding.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_select.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_select.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_slide-box.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_slide-box.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_spinner.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_spinner.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_tabs.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_tabs.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_toggle.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_toggle.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_transitions.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_transitions.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_type.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_type.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_util.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_util.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\_variables.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/_variables.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\ionicons\_ionicons-font.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/ionicons/_ionicons-font.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\ionicons\_ionicons-icons.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/ionicons/_ionicons-icons.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\ionicons\_ionicons-variables.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/ionicons/_ionicons-variables.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\scss\ionicons\ionicons.scss" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/scss/ionicons/ionicons.scss" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\lib\ionic\version.json" afterPath="$PROJECT_DIR$/BMKCApp/www/lib/ionic/version.json" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\templates\beerMe.html" afterPath="$PROJECT_DIR$/BMKCApp/www/templates/beerMe.html" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\templates\browseAll.html" afterPath="$PROJECT_DIR$/BMKCApp/www/templates/browseAll.html" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\templates\login.html" afterPath="$PROJECT_DIR$/BMKCApp/www/templates/login.html" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\templates\map.html" afterPath="$PROJECT_DIR$/BMKCApp/www/templates/map.html" />
+      <change type="MOVED" beforePath="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\www\templates\menu.html" afterPath="$PROJECT_DIR$/BMKCApp/www/templates/menu.html" />
+    </list>
+    <ignored path="BeerMeKC-Version2.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="BeerMeKC-Version2" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="dialog.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/APIServer/views/dialog.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3908046">
+              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <gulpfiles>
+      <GulpfileState>
+        <gulpfile-path>$PROJECT_DIR$/BMKCApp/gulpfile.js</gulpfile-path>
+      </GulpfileState>
+    </gulpfiles>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BMKCApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BMKCApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BMKCApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BMKCApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BMKCApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hooks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APIServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APIServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APIServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APIServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="brewery_db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BeerMeKC-Version2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APIServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bmkc_client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="editor.config.accepted" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jordan\Documents\GitHub\BeerMeKC-Version2\BMKCApp" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02e2ff8f-cbfe-45dd-96e7-77bc161c5cc4" name="Default" comment="" />
+      <created>1445203021284</created>
+      <option name="number" value="Default" />
+      <updated>1445203021284</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/BMKCApp/hooks/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30357143">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APIServer/views/dialog.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3908046">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
