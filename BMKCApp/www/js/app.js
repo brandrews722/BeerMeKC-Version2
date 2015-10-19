@@ -53,20 +53,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/browseAll',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browseAll.html'
+          templateUrl: 'templates/browseAll.html',
+          controller: 'BreweriesCtrl'
         }
       }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
+    });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/beerMe');
 });

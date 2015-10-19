@@ -41,6 +41,36 @@ angular.module('starter.controllers', [])
   };
 })
 
+  .controller('BreweriesCtrl', function($scope, $http) {
+    $http.get('https://api.brewerydb.com/v2/locations/?key=fd038434276f4a9e7d6a19ee2d8aa5b5&locality=Kansas%20City').then(function(resp) {
+      console.log('Success', resp.data);
+
+      angular.forEach(resp.data.data, function(item) {
+        console.log(item.breweryId);
+        getBreweryById(item.breweryId);
+      })
+    }, function(err) {
+      console.error('ERR', err);
+    })
+
+    $scope.breweries = [
+      { name: 'Big Rip', id: 1 },
+      { name: 'Cinder Block', id: 2 },
+      { name: 'Boulevard', id: 3 },
+      { name: 'Torn Label', id: 4 },
+      { name: 'Stockyards', id: 5 },
+      { name: 'Eye For An Eye', id: 6 }
+    ];
+
+    function getBreweryById(id) {
+      $http.get('http://api.brewerydb.com/v2/brewery/' + id + '?key=fd038434276f4a9e7d6a19ee2d8aa5b5').then(function(resp) {
+        console.log('Success - Brewery with id ' + id, resp.data);
+      }, function(err) {
+        console.error('ERR', err);
+      });
+    }
+  })
+
 //.controller('PlaylistsCtrl', function($scope) {
 //  $scope.playlists = [
 //    { title: 'Reggae', id: 1 },
