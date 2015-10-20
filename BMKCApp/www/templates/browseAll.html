@@ -1,5 +1,15 @@
 <ion-view view-title="Browse">
   <ion-content>
-    <h1>Beer List Here</h1>
+    <div ng-controller="BreweriesCtrl">
+    <ul class="brewery-list">
+      <li ng-repeat="brewery in breweries">
+        {{brewery}}
+      </li>
+
+
+    </ul>
+
+    </div>
+
   </ion-content>
 </ion-view>
