@@ -30,16 +30,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
-  })
+    })
 
-  .state('app.beerMe', {
-    url: '/beerMe',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/beerMe.html'
+    .state('app.beerMe', {
+      url: '/beerMe',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/beerMe.html'
+        }
       }
-    }
-  })
+    })
 
     .state('app.map', {
       url: '/map',
@@ -49,15 +49,27 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-      .state('app.browseAll', {
-      url: '/browseAll',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browseAll.html',
-          controller: 'BreweriesCtrl'
+    .state('app.breweries', {
+        url: '/breweries',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/breweries.html',
+            controller: 'BreweriesCtrl'
+          }
         }
-      }
+    })
+    .state('app.brewery', {
+        url: '/breweries/:breweryId',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/brewery.html',
+            controller: 'BreweryCtrl'
+          }
+        }
+
     });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/beerMe');
+
 });

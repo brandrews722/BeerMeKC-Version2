@@ -41,55 +41,107 @@ angular.module('starter.controllers', [])
     };
   })
 
-  .controller('BreweriesCtrl', function($scope, $http) {
+  .controller('BreweriesCtrl', function($scope, $http, BreweryPassingService) {
     var baseUrl = 'https://api.brewerydb.com/v2/';
     var breweryDBKey = '?key=fd038434276f4a9e7d6a19ee2d8aa5b5';
+    $scope.breweries = [];
+
     $http.get(baseUrl + 'locations/' + breweryDBKey + '&locality=Kansas%20City').then(function (resp) {
-      //console.log('Success', resp.data);
-      $scope.breweries = [];
-      angular.forEach(resp.data.data, function (item) {
-        //console.log(item.breweryId);
-        if ($scope.breweries.indexOf(item.brewery.name) == -1) {
-          $scope.breweries.push(item.brewery.name);
-        }
+      console.log('Success', resp.data);
 
-        getBreweryById(item.breweryId);
-        getBeersForBrewery(item.breweryId);
-      })
-      console.log("Breweries for view: " + $scope.breweries);
-    }, function (err) {
+      angular.forEach(resp.data.data, function(item) {
+        $scope.breweries.push(item);
+      });
+    }, function(err) {
       console.error('ERR', err);
-    })
+    });
 
+    $scope.passBreweryToBreweryView = function(brewery) {
+      $scope.BreweryPassingService = BreweryPassingService;
+      BreweryPassingService.selectedBrewery = brewery;
+    }
 
-
-    function getBreweryById(id) {
-      $http.get('http://api.brewerydb.com/v2/brewery/' + id + '?key=fd038434276f4a9e7d6a19ee2d8aa5b5').then(function (resp) {
-        //console.log('Success - Brewery with id ' + id, resp.data);
-      }, function (err) {
+    function getBreweryById($scope, id) {
+      $http.get('http://api.brewerydb.com/v2/brewery/' + id + '?key=fd038434276f4a9e7d6a19ee2d8aa5b5').then(function(resp) {
+        console.log('Success - Brewery with id ' + id, resp.data);
+        return resp.data
+      }, function(err) {
         console.error('ERR', err);
       });
     }
 
-    function getBeersForBrewery(id) {
-      $http.get('http://api.brewerydb.com/v2/brewery/' + id + '/beers/' + breweryDBKey).then(function (resp) {
-        console.log('Success - Brewery with id ' + id + ' has the following beers: ', resp.data);
-      }, function (err) {
-        console.error('ERR', err);
-      });
-    }
+
+
+
+
+  })
+  /*
+  Used to pass a brewery from BreweriesCtrl to BreweryCtrl
+   */
+  .factory('BreweryPassingService',function(){
+    return {brewery:{}}
   })
 
-//.controller('PlaylistsCtrl', function($scope) {
-//  $scope.playlists = [
-//    { title: 'Reggae', id: 1 },
-//    { title: 'Chill', id: 2 },
-//    { title: 'Dubstep', id: 3 },
-//    { title: 'Indie', id: 4 },
-//    { title: 'Rap', id: 5 },
-//    { title: 'Cowbell', id: 6 }
-//  ];
-//})
-//
-//.controller('PlaylistCtrl', function($scope, $stateParams) {
-//});
+  .controller('BreweryCtrl', function($scope, $stateParams, $http, BreweryPassingService, getBeersForBreweryService) {
+    $scope.BreweryPassingService=BreweryPassingService;
+    $scope.brewery = BreweryPassingService.selectedBrewery;
+    var breweryId = $scope.brewery.breweryId;
+
+    $scope.beers = [];
+    $scope.beers = getBeersForBreweryService.getBeers(breweryId);
+    //getBeersForBrewery(breweryId);
+    //console.log('Success - Brewery with id ' + breweryId + ' has the following beerss: ', $scope.beers);
+    //function getBeersForBrewery($scope, $http, breweryId) {
+    //  var baseUrl = 'https://api.brewerydb.com/v2/';
+    var breweryDBKey = '?key=fd038434276f4a9e7d6a19ee2d8aa5b5';
+    //
+    //  //$http.get('http://api.brewerydb.com/v2/brewery/' + breweryId + '/beers/' + breweryDBKey).then(function (resp) {
+    //  //
+    //  //  $scope.beers = resp.data;
+    //  //  console.log('Success - Brewery with id ' + breweryId + ' has the following beers: ', resp.data);
+    //  //}, function (err) {
+    //  //  console.error('ERR', err);
+    //  //});
+    //}
+
+    //this.getBeers = getBeersForBreweryService.getBeers('http://api.brewerydb.com/v2/brewery/' + breweryId + '/beers/' + breweryDBKey).success(function () {
+    //  $scope.beers =
+    //}).error(function(err) {
+    //  console.error('ERR', err);
+    //});
+    //beersPromise.then(function(data) {
+    //  $scope.beers = data;
+    //})
+
+
+  })
+
+  .service('getBeersForBreweryService', function($http) {
+    var that = this;
+    var breweryDBKey = '?key=fd038434276f4a9e7d6a19ee2d8aa5b5';
+    this.beers = [];
+
+    this.initBeers = function(breweryId) {
+      $http.get('http://api.brewerydb.com/v2/brewery/' + breweryId + '/beers/' + breweryDBKey).success(function(data) {
+        console.log('getting beers');
+        that.beers = data.data;
+      })
+    };
+
+    this.getBeers = function(breweryId) {
+      return this.beers;
+    }
+  });
+
+  //.service("getBeersForBreweryService", function($http, $q, breweryDBURL) {
+  //  var deferredBeers = $q.defer();
+  //  $http.get(breweryDBURL).then(function(data){
+  //    deferredBeers.resolve(data);
+  //  })
+  //  this.getBeers = function(breweryDBURL) {
+  //    return deferredBeers;
+  //  }
+  //})
+
+
+
