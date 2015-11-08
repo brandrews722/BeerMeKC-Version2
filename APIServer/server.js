@@ -14,6 +14,7 @@ var oauth2Controller = require('./bmkc_client/controllers/oauth2');
 var clientController = require('./bmkc_client/controllers/client');
 var uriUtil = require('mongodb-uri');
 var mongoose = require('mongoose');
+
 // Connect to the bmkc MongoDB
 
 /**
@@ -58,7 +59,11 @@ var app = express();
 
 // Set view engine to ejs
 app.set('view engine', 'ejs');
-
+app.use(express.logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.methodOverride());
+app.use(app.router);
 // Use the body-parser package in our application
 app.use(bodyParser.urlencoded({
     extended: true
@@ -73,6 +78,7 @@ app.use(session({
 
 // Use the passport package in our application
 app.use(passport.initialize());
+
 
 // Create our Express router
 var router = express.Router();
