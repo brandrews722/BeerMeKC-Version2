@@ -23,10 +23,48 @@ exports.postUsers = function(req, res) {
 
 // Create endpoint /api/users for GET
 exports.getUsers = function(req, res) {
-    User.find(function(err, user) {
+    User.find(function(err, users) {
         if (err)
             res.send("!"+err);
 
+        res.json(users);
+    });
+};
+
+exports.removeUser = function(req, res) {
+    User.remove({
+        _id: req.params.id
+    }, function(err, user) {
+        if (err)
+            res.send(err);
+        res.json({message: 'User with username: ' + user.username + ' successfully removed from MongoDB'});
+
+    })
+};
+
+exports.getUser = function(req, res) {
+    User.findOne({_id: req.params.id}, function(err, user) {
+        if (err)
+            res.send(err);
         res.json(user);
+    })
+};
+
+exports.updateUser = function(req, res) {
+    User.findOne({_id: req.params.id}, function(err, user) {
+        if (err)
+            res.send(err);
+
+        for (prop in req.body) {
+            user[prop] = req.body[prop];
+        }
+
+        user.save(function(err) {
+            if (err)
+                res.send(err);
+            res.json({ message: 'User successfully updated!'});
+        });
+
+        res.json(user)
     });
 };

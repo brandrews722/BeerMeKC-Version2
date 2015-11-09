@@ -95,6 +95,11 @@ router.route('/api/users')
     .post(userController.postUsers)
     .get(userController.getUsers);
 
+router.route('/api/users/:id')
+    .get(userController.getUser)
+    .delete(userController.removeUser)
+    .put(userController.updateUser);
+
 router.route('/api/beers')
     .get(beerController.getBeers)
     .post(beerController.postBeer);
