@@ -12,8 +12,10 @@ var userController = require('./bmkc_client/controllers/user');
 var authController = require('./bmkc_client/controllers/auth');
 var oauth2Controller = require('./bmkc_client/controllers/oauth2');
 var clientController = require('./bmkc_client/controllers/client');
+var beerController = require('./bmkc_client/controllers/beer');
 var uriUtil = require('mongodb-uri');
 var mongoose = require('mongoose');
+var Beer = require('./bmkc_client/models/beer');
 // Connect to the bmkc MongoDB
 
 /**
@@ -91,7 +93,11 @@ var router = express.Router();
 // Create endpoint handlers for /users
 router.route('/api/users')
     .post(userController.postUsers)
-    .get(userController.getUsers);
+    .get(authController.isAuthenticated, userController.getUsers);
+
+router.route('/api/beers')
+    .get(beerController.getBeers)
+    .post(beerController.postBeer);
 
 // Create endpoint handlers for /clients
 router.route('/api/clients')

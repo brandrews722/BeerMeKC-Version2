@@ -15,7 +15,7 @@ exports.postUsers = function(req, res) {
         if (err)
             res.send(err);
         else {
-            res.json({ message: 'New beer drinker added to the database!' });
+            res.json({ message: 'New BMKC beer drinker added to the MongoLab!' });
         }
 
     });
@@ -25,7 +25,7 @@ exports.postUsers = function(req, res) {
 exports.getUsers = function(req, res) {
     User.find(function(err, user) {
         if (err)
-            res.send(err);
+            res.send("!"+err);
 
         res.json(user);
     });

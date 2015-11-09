@@ -17,7 +17,8 @@ var UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    beers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Beer'}]
 });
 
 // Execute before each user.save() call

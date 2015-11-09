@@ -88,7 +88,12 @@ angular.module('starter.controllers', [])
     var breweryId = $scope.brewery.breweryId;
 
     $scope.beers = [];
-    $scope.beers = getBeersForBreweryService.getBeers(breweryId);
+
+    $scope.beers = getBeersForBreweryService.getBeers(breweryId).then(function(data) {
+      console.log(data);
+    }).fail(function(err) {err.error});
+
+
     //getBeersForBrewery(breweryId);
     //console.log('Success - Brewery with id ' + breweryId + ' has the following beerss: ', $scope.beers);
     //function getBeersForBrewery($scope, $http, breweryId) {
@@ -123,13 +128,13 @@ angular.module('starter.controllers', [])
 
     this.initBeers = function(breweryId) {
       $http.get('http://api.brewerydb.com/v2/brewery/' + breweryId + '/beers/' + breweryDBKey).success(function(data) {
-        console.log('getting beers');
+        console.log('getting beers -----> ' + data.data);
         that.beers = data.data;
       })
     };
 
     this.getBeers = function(breweryId) {
-      return this.beers;
+      return this.initBeers(breweryId);
     }
   });
 

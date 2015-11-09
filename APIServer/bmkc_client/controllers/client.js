@@ -21,7 +21,7 @@ exports.postClients = function(req, res) {
         if (err)
             res.send(err);
 
-        res.json({ message: 'Client added to the locker!', data: client });
+        res.json({ message: 'Client added to BMKC!', data: client });
     });
 };
 
