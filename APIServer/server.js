@@ -93,28 +93,31 @@ var router = express.Router();
 // Create endpoint handlers for /users
 router.route('/api/users')
     .post(userController.postUsers)
-    .get(authController.isAuthenticated, userController.getUsers);
+    .get(userController.getUsers);
 
 router.route('/api/beers')
     .get(beerController.getBeers)
     .post(beerController.postBeer);
 
-// Create endpoint handlers for /clients
-router.route('/api/clients')
-    .post(authController.isAuthenticated, clientController.postClients)
-    .get(authController.isAuthenticated, clientController.getClients);
-
-// Create endpoint handlers for oauth2 authorize
-router.route('/api/oauth2/authorize')
-    .get(authController.isAuthenticated, oauth2Controller.authorization)
-    .post(authController.isAuthenticated, oauth2Controller.decision);
-
-// Create endpoint handlers for oauth2 token
-router.route('/api/oauth2/token')
-    .post(authController.isClientAuthenticated, oauth2Controller.token);
+/**
+ * Stripped these routes out because our API services for auth is not working at this point. Will need to address this later in the month! TODO
+ */
+//// Create endpoint handlers for /clients
+//router.route('/api/clients')
+//    .post(authController.isAuthenticated, clientController.postClients)
+//    .get(authController.isAuthenticated, clientController.getClients);
+//
+//// Create endpoint handlers for oauth2 authorize
+//router.route('/api/oauth2/authorize')
+//    .get(authController.isAuthenticated, oauth2Controller.authorization)
+//    .post(authController.isAuthenticated, oauth2Controller.decision);
+//
+//// Create endpoint handlers for oauth2 token
+//router.route('/api/oauth2/token')
+//    .post(authController.isClientAuthenticated, oauth2Controller.token);
 
 router.get('/', function(req, res) {
-    res.json({ message: 'You are running dangerously low on beer!' });
+    res.json({ message: 'There is nothing here yet!' });
 });
 
 // Register all our routes
