@@ -1,0 +1,24 @@
+Each user has array of beers each beer containing an individual score - default value on beer score 5
+	The score will range from 0-10
+	On BeerMe Selection score goes up 2 - similar beer scores go up 1
+	On Swipe Right (like it, but not now) score goes up 1 (max 9) trigger new beer
+	On Swipe Left (I don't think so...) score goes down 2 (but no lower than 1) - similar beer scores go down 1 trigger new beer
+	On Swipe Down (I do not like this beer) score goes to 0 - similar beer scores go down 2 - trigger new beer
+	On Swipe Up (I love this) score goes up to 10 - similar beer scores go up 2 and trigger a Selection
+	
+When user goes into beer me has type selector, ABV (typical range 4-10 full range 1-14)(default 6), or IBU (typical range 0-50, goes to 120) (default 25)
+
+Session pulls user scores, type selection, ABV, IBU inputs
+BeerSession score = ( UserScore
+					+ (if (beertype = selected type) 10 else 0) 
+					+ (5 - (abs(beerABV - 6)/2))           //if below 0 treat as 0
+                    + (5 - (abs(beerIBU - 25)/5))		   //if below 0 treat as 0		
+					)/30
+					
+This will result in a beer score from 0 to 10 based on all inputs (round to nearest int)
+
+Place the beer into an array x times where x is the score
+
+On each press of beer me generate a random number from 0 - y where y is the array size
+
+Select that beer and present it to the user (and remove it from array)
