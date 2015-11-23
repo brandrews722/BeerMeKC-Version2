@@ -16,7 +16,7 @@ var Token = require('../models/token');
 /**
  * Look up user by username and check the password.
  */
-passport.use(new BasicStrategy(
+passport.use('simple', new BasicStrategy(
     function(username, password, callback) {
         User.findOne({ username: username }, function (err, user) {
             if (err) { return callback(err); }
@@ -117,6 +117,7 @@ passport.use(new BearerStrategy(
     }
 ));
 
-exports.isAuthenticated = passport.authenticate(['local', 'bearer'], { session : false });
+//exports.isAuthenticated = passport.authenticate(['local', 'bearer'], { session : false });
+exports.isAuthenticated = passport.authenticate('simple', { session : false });
 exports.isClientAuthenticated = passport.authenticate('client-basic', { session : false });
 exports.isBearerAuthenticated = passport.authenticate('bearer', { session: false });

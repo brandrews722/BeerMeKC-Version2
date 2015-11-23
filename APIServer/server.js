@@ -93,7 +93,7 @@ var router = express.Router();
 // Create endpoint handlers for /users
 router.route('/api/users')
     .post(userController.postUsers)
-    .get(userController.getUsers);
+    .get(authController.isAuthenticated, userController.getUsers);
 
 router.route('/api/users/:id')
     .get(userController.getUser)

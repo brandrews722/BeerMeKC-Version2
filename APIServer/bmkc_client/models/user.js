@@ -18,7 +18,30 @@ var UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    beers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Beer'}]
+    beersTasted: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'BeerTasted'
+        }
+    ],
+    beersWanted: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'BeerWanted'
+        }
+    ],
+    beerMePreferences: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Preference'
+        }
+    ],
+    contacts: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Contact'
+        }
+    ]
 });
 
 // Execute before each user.save() call

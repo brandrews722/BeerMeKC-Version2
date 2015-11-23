@@ -1,5 +1,5 @@
 /*
- user.js provided by https://github.com/scottksmith95/beerlocker/blob/master/beerlocker-6.2/controllers/user.js
+ user.js inspired by https://github.com/scottksmith95/beerlocker/blob/master/beerlocker-6.2/controllers/user.js
  */
 // Load required packages
 var User = require('../models/user');
