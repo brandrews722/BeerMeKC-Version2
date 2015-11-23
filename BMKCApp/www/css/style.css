@@ -51,8 +51,10 @@ h6.padding {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
-#beerIconBackground{
-    background-image:url("/img/beerIcon.png");
-    background-repeat:repeat;
-    opacity: ;
+.scroll {
+    height: 100%;
+}
+#map {
+    height: 100%;
+    width: 100%;
 }

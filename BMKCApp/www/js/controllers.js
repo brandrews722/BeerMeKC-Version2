@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -14,85 +14,87 @@ angular.module('starter.controllers', [])
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
-      scope: $scope
-    }).then(function(modal) {
-      $scope.modal = modal;
+        scope: $scope
+    }).then(function (modal) {
+        $scope.modal = modal;
     });
 
     // Triggered in the login modal to close it
-    $scope.closeLogin = function() {
-      $scope.modal.hide();
+    $scope.closeLogin = function () {
+        $scope.modal.hide();
     };
 
     // Open the login modal
-    $scope.login = function() {
-      $scope.modal.show();
+    $scope.login = function () {
+        $scope.modal.show();
     };
 
     // Perform the login action when the user submits the login form
-    $scope.doLogin = function() {
-      console.log('Doing login', $scope.loginData);
+    $scope.doLogin = function () {
+        console.log('Doing login', $scope.loginData);
 
-      // Simulate a login delay. Remove this and replace with your login
-      // code if using a login system
-      $timeout(function() {
-        $scope.closeLogin();
-      }, 1000);
+        // Simulate a login delay. Remove this and replace with your login
+        // code if using a login system
+        $timeout(function () {
+            $scope.closeLogin();
+        }, 1000);
     };
-  })
+})
 
-  .controller('BreweriesCtrl', function($scope, $http, BreweryPassingService) {
-    var baseUrl = 'https://api.brewerydb.com/v2/';
-    var breweryDBKey = '?key=fd038434276f4a9e7d6a19ee2d8aa5b5';
-    $scope.breweries = [];
+.controller('BreweriesCtrl', function ($scope, $http, BreweryPassingService) {
+        var baseUrl = 'https://api.brewerydb.com/v2/';
+        var breweryDBKey = '?key=fd038434276f4a9e7d6a19ee2d8aa5b5';
+        $scope.breweries = [];
 
-    $http.get(baseUrl + 'locations/' + breweryDBKey + '&locality=Kansas%20City').then(function (resp) {
-      //$http.get('/api/get-all-beers/').then(function (resp) {
-      console.log('Success', resp.data);
+        $http.get(baseUrl + 'locations/' + breweryDBKey + '&locality=Kansas%20City').then(function (resp) {
+            //$http.get('/api/get-all-beers/').then(function (resp) {
+            console.log('Success', resp.data);
 
-      angular.forEach(resp.data.data, function(item) {
-        $scope.breweries.push(item);
-      });
-    }, function(err) {
-      console.error('ERR', err);
-    });
+            angular.forEach(resp.data.data, function (item) {
+                $scope.breweries.push(item);
+            });
+        }, function (err) {
+            console.error('ERR', err);
+        });
 
-    $scope.passBreweryToBreweryView = function(brewery) {
-      $scope.BreweryPassingService = BreweryPassingService;
-      BreweryPassingService.selectedBrewery = brewery;
-    }
+        $scope.passBreweryToBreweryView = function (brewery) {
+            $scope.BreweryPassingService = BreweryPassingService;
+            BreweryPassingService.selectedBrewery = brewery;
+        }
 
-    function getBreweryById($scope, id) {
-      $http.get('http://api.brewerydb.com/v2/brewery/' + id + '?key=fd038434276f4a9e7d6a19ee2d8aa5b5').then(function(resp) {
-        console.log('Success - Brewery with id ' + id, resp.data);
-        return resp.data
-      }, function(err) {
-        console.error('ERR', err);
-      });
-    }
-
-
+        function getBreweryById($scope, id) {
+            $http.get('http://api.brewerydb.com/v2/brewery/' + id + '?key=fd038434276f4a9e7d6a19ee2d8aa5b5').then(function (resp) {
+                console.log('Success - Brewery with id ' + id, resp.data);
+                return resp.data
+            }, function (err) {
+                console.error('ERR', err);
+            });
+        }
 
 
 
-  })
-  /*
-   Used to pass a brewery from BreweriesCtrl to BreweryCtrl
-   */
-  .factory('BreweryPassingService',function(){
-    return {brewery:{}}
-  })
 
-  .controller('BreweryCtrl', function($scope, $stateParams, $http, BreweryPassingService, getBeersForBreweryService) {
-    $scope.BreweryPassingService=BreweryPassingService;
+
+    })
+    /*
+     Used to pass a brewery from BreweriesCtrl to BreweryCtrl
+     */
+    .factory('BreweryPassingService', function () {
+        return {
+            brewery: {}
+        }
+    })
+
+.controller('BreweryCtrl', function ($scope, $stateParams, $http, BreweryPassingService, getBeersForBreweryService) {
+    $scope.BreweryPassingService = BreweryPassingService;
     $scope.brewery = BreweryPassingService.selectedBrewery;
     var breweryId = $scope.brewery.breweryId;
 
     $scope.beers = [];
     console.log("breweryId: " + breweryId);
-    getBeersForBreweryService.getBeers(breweryId).then(function(data) {
-      $scope.beers = data.data.data;
-      console.log($scope.beers);
+    getBeersForBreweryService.getBeers(breweryId).then(function (data) {
+        $scope.beers = data.data.data;
+        console.log($scope.beers);
     })
 
 
@@ -121,27 +123,125 @@ angular.module('starter.controllers', [])
     //})
 
 
-  })
+})
 
-  .service('getBeersForBreweryService', function($http) {
-
-
-    return {
-      getBeers: function (breweryId) {
-        return $http.get('http://api.brewerydb.com/v2/brewery/' + breweryId + '/beers/' + '?key=fd038434276f4a9e7d6a19ee2d8aa5b5')
-
-          .then(function success(response) {
-            return response;
-          },
-          function error(response) {
-            console.error('ERR', response);
-          });
-      }
-    };
+.service('getBeersForBreweryService', function ($http) {
 
 
-  })
+        return {
+            getBeers: function (breweryId) {
+                return $http.get('http://api.brewerydb.com/v2/brewery/' + breweryId + '/beers/' + '?key=fd038434276f4a9e7d6a19ee2d8aa5b5')
 
+                .then(function success(response) {
+                        return response;
+                    },
+                    function error(response) {
+                        console.error('ERR', response);
+                    });
+            }
+        };
+
+
+    })
+    .controller('MapController', function ($scope, $ionicLoading, Markers) {
+
+        google.maps.event.addDomListener(window, 'load', function () {
+            var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
+
+            var mapOptions = {
+                center: myLatlng,
+                zoom: 12,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            var geoImage = "img/drunk-guy.png";
+
+            navigator.geolocation.getCurrentPosition(function (pos) {
+                map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+                var myLocation = new google.maps.Marker({
+                    position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+                    map: map,
+                    icon: geoImage,
+                    animation: google.maps.Animation.BOUNCE,
+                    title: "My Location"
+                });
+            });
+
+            function addInfoWindow(marker, message, record) {
+
+                var infoWindow = new google.maps.InfoWindow({
+                    content: message
+                });
+
+                google.maps.event.addListener(marker, 'click', function () {
+                    infoWindow.open(map, marker);
+                });
+
+            }
+
+            function navigateMe(destination, start) {
+                $cordovaLaunchNavigator.navigate(destination, start);
+            }
+
+            function loadMarkers() {
+
+                //Get all of the markers from our Markers factory
+                Markers.getMarkers().then(function (markers) {
+
+                    var records = markers.data.data;
+                    var beerIcon = "img/beer-icon-yellow.png";
+
+                    for (var i = 0; i < records.length; i++) {
+
+                        var record = records[i];
+                        var markerPos = new google.maps.LatLng(record.latitude, record.longitude);
+
+                        // Add the markerto the map
+
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            icon: beerIcon,
+                            animation: google.maps.Animation.DROP,
+                            position: markerPos
+                        });
+
+                        var destination = [record.latitude, record.longitude];
+
+                        var infoWindowContent = "<h5>" + record.brewery.name + "</h5>";
+                        infoWindowContent += "<a href='https://www.google.com/maps/dir/Current+Location/" + record.latitude + "," + record.longitude + "'>" + "Click Me</a>";
+                        //                        infoWindowContent += "<a href='#' onclick='navigateMe()'>" + "Take me there!" + "</a>;
+                        //                        infoWindowContent += "<p>" + record.
+
+                        addInfoWindow(marker, infoWindowContent, record);
+
+                    }
+
+                });
+
+            }
+
+
+            loadMarkers();
+            $scope.map = map;
+            console.log(Markers.getMarkers());
+        });
+
+    })
+    .factory('Markers', function ($http) {
+        var markers = [];
+        return {
+            getMarkers: function () {
+                return $http.get('https://api.brewerydb.com/v2/locations/?key=fd038434276f4a9e7d6a19ee2d8aa5b5&locality=Kansas%20City').then(function (response) {
+                    markers = response;
+                    return markers;
+                });
+            },
+            getMarker: function (id) {}
+        }
+
+    })
 
 
 //.service("getBeersForBreweryService", function($http, $q, breweryDBURL) {
@@ -153,7 +253,3 @@ angular.module('starter.controllers', [])
 //    return deferredBeers;
 //  }
 //})
-
-
-
-
