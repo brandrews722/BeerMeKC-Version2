@@ -12,13 +12,13 @@
           <td>ABV</td>
           <td>Rating</td>
         </tr>
-        <div  ng-bind="beers">
-          <tr ng-repeat="beer in beers">
+
+          <tr ng-repeat="beer in beers track by beer.id">
             <td>{{beer.name}}</td>
             <td>{{beer.style.name}}</td>
             <td>{{beer.abv}}%</td>
           </tr>
-        </div>
+
 
 
       </table>

@@ -2,7 +2,7 @@
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="brewery in breweries | orderBy: 'brewery.name'" href="#/app/breweries/{{brewery.breweryId}}" ng-click="passBreweryToBreweryView(brewery)">
-        {{brewery.brewery.name}}
+        <img ng-src="{{brewery.brewery.images.icon}}" alt=" {{brewery.brewery.name}}" />
       </ion-item>
     </ion-list>
 
