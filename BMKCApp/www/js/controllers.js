@@ -154,48 +154,46 @@ angular.module('starter.controllers', [])
 
 
   .service('userService', function($http) {
-    //return {
-    //  getUsers: function() {
-    //    return $http.get('http://localhost:3000/api/users')
-    //
-    //      .then(function success(response) {
-    //        return response;
-    //
-    //      },
-    //      function error(response) {
-    //        console.error('ERR', response);
-    //      })
-    //  }
-    //}
-    //
-    //return {
-    //  getUserById: function(id) {
-    //    return $http.get('http://localhost:3000/api/users/' + id)
-    //
-    //      .then(function success(response) {
-    //        return response;
-    //
-    //      },
-    //      function error(response) {
-    //        console.error('ERR', response);
-    //      })
-    //  }
-    //}
-    //
-    //return {
-    //  getUserByName: function(name) {
-    //    return $http.get('http://localhost:3000/api/users/byname/' + name)
-    //      .then(function success(response) {
-    //        return response;
-    //
-    //      },
-    //      function error(response) {
-    //        console.error('ERR', response);
-    //      })
-    //  }
-    //}
-
     return {
+      getUsers: function() {
+        return $http.get('http://localhost:3000/api/users')
+
+          .then(function success(response) {
+            return response;
+
+          },
+          function error(response) {
+            console.error('ERR', response);
+          })
+      },
+
+
+      getUserById: function(id) {
+        return $http.get('http://localhost:3000/api/users/' + id)
+
+          .then(function success(response) {
+            return response;
+
+          },
+          function error(response) {
+            console.error('ERR', response);
+          })
+      },
+
+
+      getUserByName: function(name) {
+        return $http.get('http://localhost:3000/api/users/byname/' + name)
+          .then(function success(response) {
+            return response;
+
+          },
+          function error(response) {
+            console.error('ERR', response);
+          })
+
+      },
+
+
       registerNewUser: function(user) {
         return $http.post('http://localhost:3000/api/users/', {
 
@@ -211,6 +209,7 @@ angular.module('starter.controllers', [])
             console.error('ERR', response);
             return response;
           })
+
       }
     }
 
