@@ -1,0 +1,3 @@
+var BeerSearch = function(config) {
+
+}

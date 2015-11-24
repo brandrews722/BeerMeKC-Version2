@@ -93,12 +93,18 @@ var router = express.Router();
 // Create endpoint handlers for /users
 router.route('/api/users')
     .post(userController.postUsers)
-    .get(authController.isAuthenticated, userController.getUsers);
+    .get(userController.getUsers);
+
+router.route('/api/auth')
+    .get(authController.isAuthenticated, userController.getUserByName);
 
 router.route('/api/users/:id')
-    .get(userController.getUser)
+    .get(userController.getUserById)
     .delete(userController.removeUser)
     .put(userController.updateUser);
+
+router.route('/api/users/byname/:name')
+    .get(authController.isAuthenticated, userController.getUserByName);
 
 router.route('/api/beers')
     .get(beerController.getBeers)

@@ -13,6 +13,7 @@
     "oauth2orize": "^1.0.1",
     "express-session": "^1.6.1",
     "ejs": "^1.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "brewerydb-node": "https://github.com/jdlars/brewerydb-node/tarball/master"
   }
 }

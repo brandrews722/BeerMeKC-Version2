@@ -42,8 +42,16 @@ exports.removeUser = function(req, res) {
     })
 };
 
-exports.getUser = function(req, res) {
+exports.getUserById = function(req, res) {
     User.findOne({_id: req.params.id}, function(err, user) {
+        if (err)
+            res.send(err);
+        res.json(user);
+    })
+};
+
+exports.getUserByName = function(req, res) {
+    User.findOne({username: req.params.name}, function(err, user) {
         if (err)
             res.send(err);
         res.json(user);

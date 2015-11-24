@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['starter.constants'])
 
   .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -139,6 +139,50 @@ angular.module('starter.controllers', [])
       }
     };
 
+
+  })
+
+.service('userService', function($http) {
+    return {
+      getUsers: function() {
+        return $http.get('http://localhost:3000/api/users')
+
+          .then(function success(response) {
+            return response;
+
+          },
+        function error(response) {
+          console.error('ERR', response);
+        });
+      }
+    };
+
+    return {
+      getUserById: function(id) {
+        return $http.get('http://localhost:3000/api/users/' + id)
+
+          .then(function success(response) {
+            return response;
+
+          },
+          function error(response) {
+            console.error('ERR', response);
+          });
+      }
+    };
+
+    return {
+      getUserByName: function(name) {
+        return $http.get('http://localhost:3000/api/users/byname/' + name)
+          .then(function success(response) {
+            return response;
+
+          },
+          function error(response) {
+            console.error('ERR', response);
+          });
+      }
+    };
 
   })
 
