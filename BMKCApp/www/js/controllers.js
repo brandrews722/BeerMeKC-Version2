@@ -143,9 +143,11 @@ angular.module('starter.controllers', [])
 
 
     })
-    .controller('MapController', function ($scope, $ionicLoading, Markers) {
+    .controller('MapController', function ($scope, $ionicLoading, $ionicPlatform, Markers) {
+    
+        
 
-        google.maps.event.addDomListener(window, 'load', function () {
+       $ionicPlatform.ready(function () {
             var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
 
             var mapOptions = {
@@ -218,7 +220,7 @@ angular.module('starter.controllers', [])
 
                     }
 
-                });
+                })
 
             }
 
