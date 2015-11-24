@@ -223,6 +223,7 @@ angular.module('starter.controllers', [])
     $ionicPlatform.ready(function () {
       var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
 
+
       var mapOptions = {
         center: myLatlng,
         zoom: 12,
