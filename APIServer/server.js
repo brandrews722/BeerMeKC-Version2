@@ -13,6 +13,7 @@ var authController = require('./bmkc_client/controllers/auth');
 var oauth2Controller = require('./bmkc_client/controllers/oauth2');
 var clientController = require('./bmkc_client/controllers/client');
 var beerController = require('./bmkc_client/controllers/beer');
+var untappedController = require('brewerydb-node');
 var uriUtil = require('mongodb-uri');
 var mongoose = require('mongoose');
 var Beer = require('./bmkc_client/models/beer');
@@ -117,6 +118,15 @@ router.route('/api/users/byname/:name')
 router.route('/api/beers')
     .get(beerController.getBeers)
     .post(beerController.postBeer);
+
+router.get('/api/untappd/findBeers?:q', function(req, res) {
+    var beerSearch = new untappedController();
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+req.params.q);
+    var result = beerSearch.beerSearch.beers({ q: req.params.q }, null);
+    res.json({message:'Found Untappd Search Result!!', data: result});
+
+});
+
 
 /**
  * Stripped these routes out because our API services for auth is not working at this point. Will need to address this later in the month! TODO
