@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
+  .controller('AppCtrl', function ($scope, $http, $ionicModal, $timeout, userService) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -32,7 +32,14 @@ angular.module('starter.controllers', [])
     // Perform the login action when the user submits the login form
     $scope.doLogin = function () {
       console.log('Doing login', $scope.loginData);
-
+      //$http.defaults.headers.common['Authorization'] = 'Basic ' + $scope.loginData.username + ':' + $scope.loginData.password;
+      var newUser = {};
+      newUser.username = $scope.loginData.username;
+      newUser.password = $scope.loginData.password;
+      userService.registerNewUser(newUser).then(function(response) {
+        $scope.userPosted = response.data;
+        console.log($scope.userPosted);
+      });
       // Simulate a login delay. Remove this and replace with your login
       // code if using a login system
       $timeout(function () {
@@ -137,7 +144,7 @@ angular.module('starter.controllers', [])
           },
           function error(response) {
             console.error('ERR', response);
-          });
+          })
       }
     };
 
@@ -157,9 +164,9 @@ angular.module('starter.controllers', [])
           },
           function error(response) {
             console.error('ERR', response);
-          });
+          })
       }
-    };
+    }
 
     return {
       getUserById: function(id) {
@@ -171,9 +178,9 @@ angular.module('starter.controllers', [])
           },
           function error(response) {
             console.error('ERR', response);
-          });
+          })
       }
-    };
+    }
 
     return {
       getUserByName: function(name) {
@@ -184,9 +191,28 @@ angular.module('starter.controllers', [])
           },
           function error(response) {
             console.error('ERR', response);
-          });
+          })
       }
-    };
+    }
+
+    return {
+      registerNewUser: function(user) {
+        return $http.post('http://localhost:3000/api/users/', {
+
+          "username" : user.username,
+          "password" : user.password
+        }).then(
+
+          function success(response) {
+            return response;
+          },
+          function error(response) {
+            console.log(user.username + user.password);
+            console.error('ERR', response);
+            return response;
+          })
+      }
+    }
 
   })
 
