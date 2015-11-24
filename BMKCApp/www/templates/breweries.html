@@ -1,8 +1,9 @@
 <ion-view view-title="Breweries">
-  <ion-content>
+  <ion-content style="overflow-y: scroll">
     <ion-list>
       <ion-item ng-repeat="brewery in breweries | orderBy: 'brewery.name'" href="#/app/breweries/{{brewery.breweryId}}" ng-click="passBreweryToBreweryView(brewery)">
-        <img ng-src="{{brewery.brewery.images.icon}}" alt=" {{brewery.brewery.name}}" />
+        <img ng-src="{{brewery.brewery.images.icon}}" onerror="this.ng-src='img/halfBeer.png'" />
+         <h2>{{brewery.brewery.name}}</h2> 
       </ion-item>
     </ion-list>
 

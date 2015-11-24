@@ -1,28 +1,29 @@
 <ion-view view-title="{{brewery.brewery.name}}">
-  <ion-content>
-    <h1>{{brewery.brewery.name}}</h1>
-    <p>{{brewery.brewery.description}}</p>
-    <img ng-src="{{brewery.brewery.images.medium}}" alt="" />
-    <h2>Our beers</h2>
+    <ion-content style="overflow-y: scroll">
+        <h1>{{brewery.brewery.name}}</h1>
+        <p>{{brewery.brewery.description}}</p>
+        <img ng-src="{{brewery.brewery.images.medium}}" alt="" />
+        <h2>Our beers</h2>
 
-      <table >
-        <tr>
-          <td>Name</td>
-          <td>Style</td>
-          <td>ABV</td>
-          <td>Rating</td>
-        </tr>
+        <table>
+            <tr class='row'>
+                <td class='col' style="font-weight: bold">Name</td>
+                <td class='col' style="font-weight: bold">Style</td>
+                <td class='col' style="font-weight: bold">ABV</td>
+                <td class='col' style="font-weight: bold">Rating</td>
+            </tr>
 
-          <tr ng-repeat="beer in beers track by beer.id">
-            <td>{{beer.name}}</td>
-            <td>{{beer.style.name}}</td>
-            <td>{{beer.abv}}%</td>
-          </tr>
-
-
-
-      </table>
+            <tr class='row' ng-repeat="beer in beers track by beer.id">
+                <td class='col'>{{beer.name}}</td>
+                <td class='col'>{{beer.style.name}}</td>
+                <td class='col'>{{beer.abv}}%</td>
+                <td class='col'></td>
+            </tr>
 
 
-  </ion-content>
+
+        </table>
+
+
+    </ion-content>
 </ion-view>
