@@ -58,3 +58,22 @@ h6.padding {
     height: 100%;
     width: 100%;
 }
+
+#breweryDescription {
+    font-style: italic;
+    border-top: #0c63ee solid 4px;
+    border-bottom: #0c63ee solid 4px;
+    border-radius: 8px;
+}
+
+#breweryTable {
+    border-radius: 8px;
+    border-right: #0c63ee solid 4px;
+    border-left: #0c63ee solid 4px;
+    box-shadow:0 3px 25px black;
+   
+}
+
+ion-item a:hover{
+    background-color: skyblue;
+}

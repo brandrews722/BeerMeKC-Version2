@@ -197,6 +197,7 @@ angular.module('starter.controllers', [])
     $ionicPlatform.ready(function () {
       var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
 
+
       var mapOptions = {
         center: myLatlng,
         zoom: 12,
@@ -204,6 +205,11 @@ angular.module('starter.controllers', [])
       };
 
       var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+                        var infoWindowContent = "<h5>" + record.brewery.name + "</h5>";
+                        infoWindowContent += "<a href='https://www.google.com/maps/dir/Current+Location/" + record.latitude + "," + record.longitude + "'>" + "Take me there!</a>";
+                        addInfoWindow(marker, infoWindowContent, record);
+
 
       var geoImage = "img/drunk-guy.png";
 
