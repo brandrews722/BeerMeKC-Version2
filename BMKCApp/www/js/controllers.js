@@ -206,11 +206,6 @@ angular.module('starter.controllers', [])
 
       var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-                        var infoWindowContent = "<h5>" + record.brewery.name + "</h5>";
-                        infoWindowContent += "<a href='https://www.google.com/maps/dir/Current+Location/" + record.latitude + "," + record.longitude + "'>" + "Take me there!</a>";
-                        addInfoWindow(marker, infoWindowContent, record);
-
-
       var geoImage = "img/drunk-guy.png";
 
       navigator.geolocation.getCurrentPosition(function (pos) {
