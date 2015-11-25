@@ -4,83 +4,93 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+var bmkcApp = angular.module('bmkcApp', [
+  'ionic',
+  'userService',
+  'bmkcAppControllers',
+  'apiConstants',
+  'breweryServiceBDB'
+]);
 
-  .run(function ($ionicPlatform) {
-    $ionicPlatform.ready(function () {
-      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-      // for form inputs)
-      if (window.cordova && window.cordova.plugins.Keyboard) {
-        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-        cordova.plugins.Keyboard.disableScroll(true);
+bmkcApp.run(function ($ionicPlatform) {
+  $ionicPlatform.ready(function () {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
 
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+
+    if (window.cordova && window.cordova.logger) {
+      window.cordova.logger.__onDeviceReady();
+    }
+  });
+});
+
+bmkcApp.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  $ionicConfigProvider.views.maxCache(10);
+  $ionicConfigProvider.tabs.position('bottom');
+  $stateProvider
+
+    .state('app', {
+      url: '/app',
+      abstract: true,
+      templateUrl: 'templates/menu.html',
+      controller: 'AppCtrl'
+    })
+
+    .state('app.beerMe', {
+      url: '/beerMe',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/beerMe.html'
+        }
       }
-      if (window.StatusBar) {
-        // org.apache.cordova.statusbar required
-        StatusBar.styleDefault();
+    })
+
+    .state('app.map', {
+      url: '/map',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/map.html',
+          controller: 'MapController'
+        }
+      }
+    })
+    .state('app.breweries', {
+      url: '/breweries',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/breweries.html',
+          controller: 'BreweriesCtrl'
+        }
+      }
+    })
+    .state('app.brewery', {
+      url: '/breweries/:breweryId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/brewery.html',
+          controller: 'BreweryCtrl'
+        }
+      }
+
+    })
+    .state('app.about', {
+      url: '/about',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/about.html'
+        }
       }
     });
-  })
 
-  .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-    $ionicConfigProvider.views.maxCache(10);
-    $ionicConfigProvider.tabs.position('bottom');
-    $stateProvider
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/beerMe');
 
-      .state('app', {
-        url: '/app',
-        abstract: true,
-        templateUrl: 'templates/menu.html',
-        controller: 'AppCtrl'
-      })
-
-      .state('app.beerMe', {
-        url: '/beerMe',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/beerMe.html'
-          }
-        }
-      })
-
-      .state('app.map', {
-        url: '/map',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/map.html',
-            controller: 'MapController'
-          }
-        }
-      })
-      .state('app.breweries', {
-        url: '/breweries',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/breweries.html',
-            controller: 'BreweriesCtrl'
-          }
-        }
-      })
-      .state('app.brewery', {
-        url: '/breweries/:breweryId',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/brewery.html',
-            controller: 'BreweryCtrl'
-          }
-        }
-
-      })
-      .state('app.about', {
-        url: '/about',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/about.html'
-          }
-        }
-      });
-
-    // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/beerMe');
-
-  });
+});

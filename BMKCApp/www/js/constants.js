@@ -1,14 +1,29 @@
-angular.module('starter.controllers', ['starter.constants'])
+var apiConstants = angular.module('apiConstants', [])
 
-  .constant("APIS", {
+apiConstants.constant("APIS", {
     "BREWERYDB":
     {
-      "BASE_URL": "https://api.brewerydb.com/v2/",
+      /**
+       * To overcome CORS issues, use http://ionicinaction.com/blog/how-to-fix-cors-problems-and-no-access-control-allow-origin-header-errors-with-ionic/
+       * http://localhost:<PORT>/api.brewerydb.com/...
+       */
+      "BASE_URL": "http://api.brewerydb.com/v2/",
       "KEY" : "?key=fd038434276f4a9e7d6a19ee2d8aa5b5",
       "PREFIX": ""
     },
     "UNTAPPD":
     {
 
+    },
+    "PROXY":
+    {
+      "HOST": "http://localhost:1337/"
+    },
+    "NODEJS":
+    {
+      /**
+       * Likely you will have to change this to your localhost IP
+       */
+      "BASE_URL": "http://192.168.1.5:3000/api/"
     }
-  })
+  });
