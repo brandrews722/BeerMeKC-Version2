@@ -1,6 +1,6 @@
-var userService = angular.module('userService', ['apiConstants']);
+var userServices = angular.module('userServices', []);
 
-userService.service('userService', function($http, APIS) {
+  userServices.service('userService', function($http, APIS) {
     var baseUrl = APIS.NODEJS.BASE_URL;
     return {
       getUsers: function () {

@@ -1,9 +1,9 @@
 /**
  * Created by Jordan on 11/25/2015.
  */
-var breweryServiceBDB = angular.module('breweryServiceBDB', ['apiConstants']);
+angular.module('breweryDBServices')
 
-breweryServiceBDB.service('breweryServiceBDB', function($http, APIS) {
+.service('breweryServiceBDB', function($http, APIS) {
     var baseUrl = APIS.BREWERYDB.BASE_URL;
     var breweryDBKey = APIS.BREWERYDB.KEY;
     return {
