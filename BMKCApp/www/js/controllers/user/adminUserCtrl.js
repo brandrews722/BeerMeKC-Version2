@@ -28,6 +28,8 @@ angular.module('bmkcApp.controllers')
       $scope.modal.show();
     };
 
+
+
     // Perform the login action when the user submits the login form
     $scope.doLogin = function () {
       console.log('Doing login', $scope.loginData);

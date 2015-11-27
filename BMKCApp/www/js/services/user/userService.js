@@ -1,8 +1,16 @@
-var userServices = angular.module('userServices', []);
+angular.module('userServices', [])
 
-  userServices.service('userService', function($http, APIS) {
+  .service('userService', function($http, APIS) {
     var baseUrl = APIS.NODEJS.BASE_URL;
     return {
+      logIn: function(username, password) {
+        return $http.post(baseUrl + 'login/', {username: username, password: password})
+      },
+
+      logOut: function() {
+
+      },
+
       getUsers: function () {
         return $http.get('/users')
 

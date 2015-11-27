@@ -76,3 +76,29 @@ exports.updateUser = function(req, res) {
         res.json(user)
     });
 };
+
+exports.login = function(req, res) {
+    var username = req.body.username || '';
+        var password = req.body.password || '';
+
+    if (username == '' || password == '') {
+        return res.send(401);
+    }
+
+    User.findOne({username: username}, function (err, user) {
+        if (err) {
+            console.log(err);
+            return res.send(401);
+        }
+
+        user.comparePasswordAndCreateToken(password, function(isMatch) {
+            if (!isMatch) {
+                console.log("Failed to log in with " + user.username);
+            }
+
+            var token = jwt.sign(user, secret.secretToken, { expiresInMinutes: 60 });
+
+            return res.json({token: token});
+        })
+    });
+}

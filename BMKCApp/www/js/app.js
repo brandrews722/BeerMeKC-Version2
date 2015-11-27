@@ -31,19 +31,43 @@ angular.module('bmkcApp', [
       if (window.cordova && window.cordova.logger) {
         window.cordova.logger.__onDeviceReady();
       }
+
+      $rootScope.$on("$routeChangeStart", function(event, nextRoute, currentRoute){
+        if (nextRoute.access.loginRequired && !authenticationService.isLogged) {
+          $location.path('/login');
+        }
+      });
     });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+
+
+  .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider, $httpProvider) {
     $ionicConfigProvider.views.maxCache(10);
     $ionicConfigProvider.tabs.position('bottom');
+
+    $httpProvider.interceptors.push('tokenInterceptor');
+
     $stateProvider
 
       .state('app', {
         url: '/app',
         abstract: true,
         templateUrl: 'templates/menu.html',
-        controller: 'AppCtrl'
+        controller: 'AppCtrl',
+        access: { loginRequired: false }
+      })
+
+      .state('app.login', {
+        url: '/login',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/login.html',
+            controller: 'LoginCtrl'
+          }
+
+        },
+        access: { loginRequired: false }
       })
 
       .state('app.beerMe', {
@@ -52,7 +76,8 @@ angular.module('bmkcApp', [
           'menuContent': {
             templateUrl: 'templates/beerMe.html'
           }
-        }
+        },
+        access: { loginRequired: false }
       })
 
       .state('app.map', {
@@ -62,7 +87,8 @@ angular.module('bmkcApp', [
             templateUrl: 'templates/map.html',
             controller: 'MapController'
           }
-        }
+        },
+        access: { loginRequired: true }
       })
       .state('app.breweries', {
         url: '/breweries',
@@ -71,7 +97,8 @@ angular.module('bmkcApp', [
             templateUrl: 'templates/breweries.html',
             controller: 'BreweriesCtrl'
           }
-        }
+        },
+        access: { loginRequired: true }
       })
       .state('app.brewery', {
         url: '/breweries/:breweryId',
@@ -80,7 +107,8 @@ angular.module('bmkcApp', [
             templateUrl: 'templates/brewery.html',
             controller: 'BreweryCtrl'
           }
-        }
+        },
+        access: { loginRequired: true }
 
       })
       .state('app.about', {
@@ -89,10 +117,11 @@ angular.module('bmkcApp', [
           'menuContent': {
             templateUrl: 'templates/about.html'
           }
-        }
+        },
+        access: { loginRequired: false }
       })
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/beerMe');
+    $urlRouterProvider.otherwise('/app/about');
 
   });

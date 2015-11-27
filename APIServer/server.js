@@ -17,6 +17,10 @@ var untappdController = require('./untappd');
 var breweryDBNode = require('brewerydb-node');
 var uriUtil = require('mongodb-uri');
 var mongoose = require('mongoose');
+var flash = require('connect-flash');
+var morgan = require('morgan');
+var cookieParser = require('cookie-parser');
+
 var Beer = require('./bmkc_client/models/beer');
 // Connect to the bmkc MongoDB
 
@@ -59,6 +63,7 @@ End of https://gist.github.com/mongolab-org/9959376 snippet
 
 // Create our Express application
 var app = express();
+var port = process.env.PORT || 3000;
 
 // Set view engine to ejs
 app.set('view engine', 'ejs');
@@ -67,8 +72,9 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-
+app.use(morgan('dev'));
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, POST');
@@ -77,15 +83,13 @@ app.use(function(req, res, next) {
 });
 
 // Use express session support since OAuth2orize requires it
-app.use(session({
-    secret: 'Super Secret Session Key',
-    saveUninitialized: true,
-    resave: true
-}));
+app.use(session({ secret: 'supercalifragilisticespialidocious secret key' } ));
+
 
 // Use the passport package in our application
 app.use(passport.initialize());
-
+app.use(passport.session());
+app.use(flash());
 // Create our Express router
 var router = express.Router();
 
@@ -126,7 +130,12 @@ router.get('/api/untappd/findBeers?:q', function(req, res) {
     var result = beerSearch.beerSearch.beers({ q: req.params.q }, null);
     res.json({message:'Found Untappd Search Result!!', data: result});
 
+router.route('/api/authenticate')
+    .get(authController.authenticateUser)
+
 });
+
+
 
 
 /**
@@ -154,4 +163,4 @@ router.get('/', function(req, res) {
 app.use(router);
 
 // Start the server
-app.listen(3000);
+app.listen(port);
