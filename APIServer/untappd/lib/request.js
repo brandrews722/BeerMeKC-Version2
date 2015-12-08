@@ -1,5 +1,5 @@
-var request = require('request');
-var qs = require('querystring');
+var request = require('brewerydb-node/request');
+var qs = require('brewerydb-node/querystring');
 var cfg = require('../config');
 
 function Request(endpoint, params, config) {

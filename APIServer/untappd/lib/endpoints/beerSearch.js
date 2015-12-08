@@ -1,4 +1,4 @@
-var Request = require ('../request');
+//var Request = require ('../request');
 
 var BeerSearch = function(config) {
     this.config = config;
