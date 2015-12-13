@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var BeerSchema = new mongoose.Schema({
-    userId: String,
+    id: String,
     name: String,
     type: String,
     breweryName: String,

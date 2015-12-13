@@ -6,7 +6,7 @@
                 <h1>{{brewery.brewery.name}}</h1>
                 <p id="breweryDescription">{{brewery.brewery.description}}</p>
 
-                
+
 
                 <table id="breweryTable" style="background-color: #80ccff; overflow-y: scroll">
                     <tr class="row"><h2>Our beers</h2></tr>
@@ -15,12 +15,15 @@
                         <td class='col' style="font-weight: bold">Style</td>
                         <td class='col' style="font-weight: bold">ABV (%)</td>
                         <td class='col' style="font-weight: bold">Rating</td>
+                        <td class='col' style="...">Image</td>
                     </tr>
 
                     <tr class='row' ng-repeat="beer in beers track by beer.id">
                         <td class='col'>{{beer.name}}</td>
                         <td class='col'>{{beer.style.name}}</td>
                         <td class='col' style="text-align: center">{{beer.abv}}</td>
+                        <td class='col' style="...">-</td>
+                        <td class='col'> <img ng-src="{{beer.labels.bmkc}}" style="width:100%;height:100%;"/></td>
                         <td class='col'></td>
                     </tr>
 

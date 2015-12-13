@@ -26,7 +26,9 @@ apiConstants.constant("APIS", {
       /**
        * Likely you will have to change this to your localhost IP
        */
-      //"BASE_URL": "http://192.168.1.120:3000/api/"
-      "BASE_URL": "http://localhost:3000/api"
+      //"BASE_URL": "http://192.168.1.120:3000/api/",
+      "BASE_URL": "http://localhost:3000/api/",
+
+      "INSERT_ATTEMPT_URL": "http://192.168.1.120:3000/post"
     }
   });

@@ -13,6 +13,11 @@ var authController = require('./bmkc_client/controllers/auth');
 var oauth2Controller = require('./bmkc_client/controllers/oauth2');
 var clientController = require('./bmkc_client/controllers/client');
 var beerController = require('./bmkc_client/controllers/beer');
+
+var bdbBreweryController = require('./brewery_db/controllers/bdbBrewery');
+var bdbBeerController = require('./brewery_db/controllers/bdbBeer');
+
+
 var untappdController = require('./untappd');
 var breweryDBNode = require('brewerydb-node');
 var uriUtil = require('mongodb-uri');
@@ -119,6 +124,12 @@ router.route('/api/users/byname/:name')
 router.route('/api/beers')
     .get(beerController.getBeers)
     .post(beerController.postBeer);
+
+router.route('/api/brewery_db/breweries')
+    .get(bdbBreweryController.getBreweries);
+
+router.route('/api/brewery_db/beers_for_brewery/:bdbBreweryId')
+    .get(bdbBeerController.getBeersForBrewery);
 
 router.get('/api/untappd/findBeers?:q', function(req, res) {
     var beerSearch = new untappdController();
