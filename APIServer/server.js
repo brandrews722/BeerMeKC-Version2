@@ -139,6 +139,9 @@ router.route('/api/brewery_db/beers/:bdbBeerId')
 router.route('/api/brewery_db/beers_for_brewery/:bdbBreweryId')
     .get(bdbBeerController.getBeersForBrewery);
 
+router.route('/api/brewery_db/demo_beers')
+    .get(bdbBeerController.getDemoBeers);
+
 router.get('/api/untappd/findBeers?:q', function(req, res) {
     var beerSearch = new untappdController();
     console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+req.params.q);

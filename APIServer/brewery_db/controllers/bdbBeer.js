@@ -3,11 +3,11 @@ var BdbBeer = require('../models/bdbBeer');
 exports.getBeersForBrewery = function(req, res) {
     BdbBeer.find(
         {bdbBreweryId : req.params.bdbBreweryId},
-     function(err, breweries) {
-        if (err)
-            res.send(err);
-        res.json(breweries);
-    });
+        function(err, breweries) {
+            if (err)
+                res.send(err);
+            res.json(breweries);
+        });
 };
 
 exports.getBeerByBdbId = function(req, res) {
@@ -27,5 +27,21 @@ exports.getBeerByMongoId = function(req, res) {
             if (err)
                 res.send(err);
             res.json(beer);
+        });
+};
+
+exports.getDemoBeers = function(req, res) {
+    BdbBeer.find(
+        {
+            bdbBreweryId: {
+            $in: [
+                '8uTWZo',
+                'sCgeAO'
+            ]
+        }},
+        function (err, beers) {
+            if (err)
+                res.send(err);
+            res.json(beers);
         });
 };

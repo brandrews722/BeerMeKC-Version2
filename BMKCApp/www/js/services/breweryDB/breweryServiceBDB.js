@@ -19,9 +19,6 @@ angular.module('breweryDBServices')
             console.error('ERR', response);
           })
       },
-      getBreweryByID: function (id) {
-
-      },
 
       getBeerByBdbId: function (id) {
         return $http.get(baseLocalUrl + 'brewery_db/beers/' + id)
@@ -40,7 +37,17 @@ angular.module('breweryDBServices')
           },
           function error(response) {
             console.error('ERR', response);
-          }
+          })
+      },
+
+      getDemoBeers: function () {
+        return $http.get(baseLocalUrl + 'brewery_db/demo_beers')
+          .then(function success(response) {
+            return response;
+          },
+          function error(response) {
+            console.error('ERR', response);
+          })
       },
 
       getBeersForBrewery: function (breweryId) {
