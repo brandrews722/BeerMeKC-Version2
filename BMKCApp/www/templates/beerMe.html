@@ -1,58 +1,24 @@
 <ion-view view-title="Beer Me!">
-    <ion-content scroll="true" overflow-scroll="true">
-        <br>
-        <br>
-        <br>
-        <br>
+    <ion-content scroll="false">
+      <ion-pane ng-controller="CardsCtrl">
+        <ion-header-bar class="bar-calm">
+          <h1 class="title">Ionic Tinder Cards</h1>
+        </ion-header-bar>
 
-        <br>
-        <br>
-        <br>
-
-
-        <div class="list">
-
-            <label class="item item-input item-select">
-                <div class="input-label">
-                    Beer Type
-                </div>
-                <select>
-                    <option selected>All</option>
-                    <option>Pale Lager</option>
-                    <option>Maibock</option>
-                    <option>Weissbier</option>
-                    <option>IPA</option>
-                    <option>Saison</option>
-                    <option>English Bitter</option>
-                    <option>Double IPA</option>
-                    <option>Dark Lager</option>
-                    <option>Brown Ale</option>
-                    <option>Porter</option>
-                    <option>Stout</option>
-                    <option>Imperial Stout</option>
-                </select>
-            </label>
-        </div>
-        <br>
-        <h6 style="float: left; width: 50%; padding-left: 10%;">Minimum IBUs</h6>
-        <h6 style="float: right; width: 50%; text-align: right; padding-right: 25%;">Minimum ABV</h6>
-        <div class="item range range-positive">
-            <form oninput="IBUamount.value=IBUs.value">
-                <input type="range" id="IBUs" name="IBUs" min="0" max="120">
-                <output name="IBUamount" for="IBUs" style="padding-left:47%;">0</output>
-            </form>
-            <form oninput="ABVamount.value=ABV.value">
-                <input type="range" id="ABV" name="ABV" min="0" max="20">
-                <output name="ABVamount" for="ABV" style="padding-left: 47%;">0</output>
-                %
-            </form>
-        </div>
-
-        <div class="center">
-            <button class="button button-large button-positive">
-                Beer Me
-            </button>
-        </div>
-
+        <td-cards>
+          <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
+                   on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
+                   on-partial-swipe="cardPartialSwipe(amt)">
+            <div class="title">
+              {{card.title}}
+            </div>
+            <div class="image">
+              <div class="no-text overlayBox"><div class="noBox boxed">Trash</div></div>
+              <img ng-src="{{card.image}}">
+              <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">Save</div></div>
+            </div>
+          </td-card>
+        </td-cards>
+      </ion-pane>
     </ion-content>
 </ion-view>

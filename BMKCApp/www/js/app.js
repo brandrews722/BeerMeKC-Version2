@@ -8,7 +8,7 @@ angular.module('bmkcApp', [
   'ionic',
   'userServices',
   'bmkcApp.controllers',
-
+  'ionic.contrib.ui.tinderCards',
   'breweryDBServices',
   'apiConstants'
 
@@ -50,7 +50,8 @@ angular.module('bmkcApp', [
         url: '/beerMe',
         views: {
           'menuContent': {
-            templateUrl: 'templates/beerMe.html'
+            templateUrl: 'templates/beerMe.html',
+            controller: 'CardsCtrl'
           }
         }
       })

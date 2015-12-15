@@ -25,6 +25,7 @@ angular.module('breweryDBServices')
 
       getBeersForBrewery: function (breweryId) {
       //  return $http.get(baseUrl + 'brewery/' + breweryId + '/beers/' + breweryDBKey)
+          return $http.get(baseLocalUrl + 'brewery_db/beers_for_brewery/' + breweryId)
 
           .then(function success(response) {
             return response;
