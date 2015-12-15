@@ -23,6 +23,26 @@ angular.module('breweryDBServices')
 
       },
 
+      getBeerByBdbId: function (id) {
+        return $http.get(baseLocalUrl + 'brewery_db/beers/' + id)
+          .then(function success(response) {
+                      return response;
+                    },
+                    function error(response) {
+                      console.error('ERR', response);
+                    })
+                },
+
+      getBeerByMongoId: function (id) {
+        return $http.get(baseLocalUrl + 'brewery_db/beers/mongo/' + id)
+          .then(function success(response) {
+              return response;
+          },
+          function error(response) {
+            console.error('ERR', response);
+          }
+      },
+
       getBeersForBrewery: function (breweryId) {
       //  return $http.get(baseUrl + 'brewery/' + breweryId + '/beers/' + breweryDBKey)
           return $http.get(baseLocalUrl + 'brewery_db/beers_for_brewery/' + breweryId)
