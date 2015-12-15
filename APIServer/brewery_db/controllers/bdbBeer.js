@@ -9,3 +9,23 @@ exports.getBeersForBrewery = function(req, res) {
         res.json(breweries);
     });
 };
+
+exports.getBeerByBdbId = function(req, res) {
+    BdbBeer.find(
+        {bdbBeerId: req.params.bdbBeerId},
+        function (err, beer) {
+            if (err)
+                res.send(err);
+            res.json(beer);
+        });
+};
+
+exports.getBeerByMongoId = function(req, res) {
+    BdbBeer.find(
+        {_id: req.params.id},
+        function (err, beer) {
+            if (err)
+                res.send(err);
+            res.json(beer);
+        });
+};
