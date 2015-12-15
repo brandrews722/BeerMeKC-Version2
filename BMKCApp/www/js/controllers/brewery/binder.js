@@ -1,8 +1,22 @@
-angular.module('bmkcApp.controllers').controller('CardsCtrl', function ($scope, $http) {
+angular.module('bmkcApp.controllers')
+    
+    .directive('noScroll', function() {
+    return {
+        restrict: 'A',
+        link: function($scope, $element, $attr) {
+            $element.on('touchmove', function(e) {
+                e.preventDefault();
+            });
+        }
+    }
+})
+    
+    
+    .controller('CardsCtrl', function ($scope, $http) {
   var cardTypes = [
-    { image: 'img/pic2.png', title: 'So much grass #hippster'},
-    { image: 'img/pic3.png', title: 'Way too much Sand, right?'},
-    { image: 'img/pic4.png', title: 'Beautiful sky from wherever'},
+    { image: 'img/pic2.jpg', title: 'Boulevard Tank 7'},
+    { image: 'img/pic3.jpg', title: 'Boulevard Wheat'},
+    { image: 'img/pic4.jpg', title: 'Boulevard Sixth Glass'},
   ];
 
   $scope.cards = [];
