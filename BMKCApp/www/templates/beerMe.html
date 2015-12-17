@@ -14,6 +14,20 @@
               <img ng-src="{{card.image}}">
               <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">Save</div></div>
             </div>
+            <div class="beer-info">
+              <p>
+                Brewed at: {{card.brewery.name}}
+              </p>
+              <p>
+                Style: {{card.style.name}}
+              </p>
+              <p>
+                Abv: {{card.abv}}
+              </p>
+              <p>
+                Ibu: {{card.ibu}}
+              </p>
+            </div>
           </td-card>
         </td-cards>
       </ion-pane>

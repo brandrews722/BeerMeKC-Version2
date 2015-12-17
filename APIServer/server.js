@@ -128,6 +128,12 @@ router.route('/api/beers')
 router.route('/api/brewery_db/breweries')
     .get(bdbBreweryController.getBreweries);
 
+router.route('/api/brewery_db/breweries/:bdbBreweryId')
+    .get(bdbBreweryController.getBreweryByBdbId);
+
+router.route('/api/brewery_db/breweries/mongo/:id')
+    .get(bdbBreweryController.getBreweryByMongoId);
+
 
 router.route('/api/brewery_db/beers/mongo/:mongoId')
     .get(bdbBeerController.getBeerByMongoId);

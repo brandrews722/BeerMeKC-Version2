@@ -40,8 +40,10 @@ exports.getDemoBeers = function(req, res) {
             ]
         }},
         function (err, beers) {
-            if (err)
+            if (err) {
                 res.send(err);
+            }
+
             res.json(beers);
         });
 };

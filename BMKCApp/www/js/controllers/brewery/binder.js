@@ -12,16 +12,26 @@ angular.module('bmkcApp.controllers')
   })
 
 
-  .controller('CardsCtrl', function ($scope, breweryServiceBDB) {
-    $scope.binderBeers = breweryServiceBDB.getDemoBeers().then(function(response) {
+  .controller('CardsCtrl', function ($scope, breweryServiceBDB, $q) {
+    $q.all([
+      breweryServiceBDB.getDemoBeers(),
+      breweryServiceBDB.getBreweriesInKC()
+    ]).then(function(results) {
+      var beers = results[0].data;
+      var breweries = results[1].data;
+      var breweryMap = {};
+      angular.forEach(breweries, function(brewery) {
+        breweryMap[brewery.brewery.id] = brewery.brewery.name;
+      });
       console.log("these are the beers");
-      console.log(response.data);
+      console.log(beers);
       var cardTypes = [];
-      angular.forEach(response.data, function(beer) {
-        console.log("adding item to binderBeers");
-        console.log(beer);
-        console.log(getImage(beer) + beer.name);
-        cardTypes.push({image: getImage(beer), title: beer.name});
+
+
+
+      angular.forEach(beers, function(beer) {
+
+        cardTypes.push({image: getImage(beer), title: beer.name, brewery: {name: breweryMap[beer.bdbBreweryId]}, style: {name: beer.style.name}, abv: beer.abv, ibu: beer.ibu});
       });
 
       function getImage(beer) {
@@ -40,7 +50,9 @@ angular.module('bmkcApp.controllers')
       $scope.cards = [];
 
       $scope.addCard = function(i) {
-        var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+        var indexCard = Math.floor(Math.random() * cardTypes.length);
+        var newCard = cardTypes[indexCard];
+        cardTypes.splice(indexCard, 1);
         newCard.id = Math.random();
         $scope.cards.push(angular.extend({}, newCard));
       };
@@ -60,6 +72,8 @@ angular.module('bmkcApp.controllers')
         console.log('Card removed');
       }
     });
+
+
 
 
   });
