@@ -8,6 +8,7 @@ angular.module('bmkcApp', [
   'ionic',
   'userServices',
   'bmkcApp.controllers',
+  'qEachPromise',
   'ionic.contrib.ui.tinderCards',
   'breweryDBServices',
   'apiConstants'
